@@ -13,8 +13,12 @@
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map />
+        <datasource-map>
+          <unit-entry name="a.xml" value="cc054c2c-eeea-4550-8c76-90b7cf68959f" />
+          <unit-entry name="hibernate.cfg.xml" />
+        </datasource-map>
         <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>
@@ -66,5 +70,6 @@
     <orderEntry type="library" name="Maven: javax.enterprise:cdi-api:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.4" level="project" />
   </component>
 </module>
