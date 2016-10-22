@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.ActeurEntity" table="acteur" schema="cinema">
+        <id name="noAct">
+            <column name="NoAct" sql-type="int(4)"/>
+        </id>
+        <property name="nomAct">
+            <column name="NomAct" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="prenAct">
+            <column name="PrenAct" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="dateNaiss">
+            <column name="DateNaiss" sql-type="date" not-null="true"/>
+        </property>
+        <property name="dateDeces">
+            <column name="DateDeces" sql-type="date" not-null="true"/>
+        </property>
+        <set name="personnagesByNoAct" inverse="true">
+            <key>
+                <column name="NoAct"/>
+            </key>
+            <one-to-many not-found="ignore" class="model.PersonnageEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - cinema@localhost" uuid="cc054c2c-eeea-4550-8c76-90b7cf68959f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>memory</secret-storage>
+      <user-name>userepul</user-name>
+    </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="f399be82-ea65-44dd-a44c-7dfa51cf4fde">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>userepul</user-name>
+      <user-password>dfcfdfdadfdfdfc6</user-password>
+    </data-source>
+  </component>
+</project>
