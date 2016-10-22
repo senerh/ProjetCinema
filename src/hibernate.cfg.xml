@@ -1,22 +1,22 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0'?>
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
 
-      <property name="connection.url">jdbc:mysql://localhost:3306/cinema</property>
-      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-      <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-      <property name="hibernate.current_session_context_class">thread</property>
-      <property name="connection.username">userepul</property>
-      <property name="connection.password">epul</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/cinema</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="connection.username">userepul</property>
+        <property name="connection.password">epul</property>
 
-      <mapping class="model.ActeurEntity"/>
-      <mapping class="model.CategorieEntity"/>
-      <mapping class="model.FilmEntity"/>
-      <mapping class="model.PersonnageEntity"/>
-      <mapping class="model.RealisateurEntity"/>
+        <mapping resource="model/ActeurEntity.hbm.xml"/>
+        <mapping resource="model/RealisateurEntity.hbm.xml"/>
+        <mapping resource="model/PersonnageEntity.hbm.xml"/>
+        <mapping resource="model/FilmEntity.hbm.xml"/>
+        <mapping resource="model/RealisateurEntity.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

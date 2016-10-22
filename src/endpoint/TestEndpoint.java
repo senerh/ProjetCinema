@@ -25,17 +25,25 @@ public class TestEndpoint {
     @Path("/hibernate")
     @Produces(MediaType.TEXT_PLAIN)
     public String getHibernate() {
-        String res = "";
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.close();
+        return "Hibernate works !";
+    }
 
+    @GET
+    @Path("/acteurs")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getActeurs() {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        String res = "";
         Transaction tx = session.beginTransaction();
         List<ActeurEntity> listActeurEntity = (List<ActeurEntity>) session.createQuery("from ActeurEntity").list();
         for (ActeurEntity acteurEntity : listActeurEntity) {
             res += "\n" + acteurEntity.getNomAct();
         }
         tx.commit();
-
         session.close();
         return res;
     }
+
 }
