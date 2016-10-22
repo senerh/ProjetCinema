@@ -13,7 +13,7 @@
         <property name="connection.password">epul</property>
 
         <mapping resource="model/ActeurEntity.hbm.xml"/>
-        <mapping resource="model/RealisateurEntity.hbm.xml"/>
+        <mapping resource="model/CategorieEntity.hbm.xml"/>
         <mapping resource="model/PersonnageEntity.hbm.xml"/>
         <mapping resource="model/FilmEntity.hbm.xml"/>
         <mapping resource="model/RealisateurEntity.hbm.xml"/>
