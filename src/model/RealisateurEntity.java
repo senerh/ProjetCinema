@@ -1,17 +1,21 @@
 package model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.List;
 
-/**
- * Created by nathan on 10/10/2016.
- */
 @Entity
 @Table(name = "realisateur", schema = "cinema", catalog = "")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RealisateurEntity {
     private int noRea;
     private String nomRea;
     private String prenRea;
+    @XmlTransient
     private List<FilmEntity> filmsByNoRea;
 
     @Id

@@ -1,20 +1,29 @@
 package model;
 
+import util.SqlDateAdapter;
+
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
 import java.util.List;
 
-/**
- * Created by nathan on 10/10/2016.
- */
 @Entity
 @Table(name = "acteur", schema = "cinema", catalog = "")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ActeurEntity {
     private int noAct;
     private String nomAct;
     private String prenAct;
+    @XmlJavaTypeAdapter(SqlDateAdapter.class)
     private Date dateNaiss;
+    @XmlJavaTypeAdapter(SqlDateAdapter.class)
     private Date dateDeces;
+    @XmlTransient
     private List<PersonnageEntity> personnagesByNoAct;
 
     @Id

@@ -1,4 +1,4 @@
-package hibernate;
+package util;
 
 import org.hibernate.*;
 import org.hibernate.cfg.*;
@@ -9,7 +9,7 @@ public class HibernateUtil {
 
     static {
         try {
-            // Création de la SessionFactory à partir de hibernate.cfg.xml
+            // Création de la SessionFactory à partir de util.cfg.xml
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed

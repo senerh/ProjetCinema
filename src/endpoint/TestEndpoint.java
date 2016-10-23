@@ -1,6 +1,7 @@
 package endpoint;
 
-import hibernate.HibernateUtil;
+import dao.ActeurDAO;
+import util.HibernateUtil;
 import model.ActeurEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -22,7 +23,7 @@ public class TestEndpoint {
     }
 
     @GET
-    @Path("/hibernate")
+    @Path("/util")
     @Produces(MediaType.TEXT_PLAIN)
     public String getHibernate() {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -44,6 +45,22 @@ public class TestEndpoint {
         tx.commit();
         session.close();
         return res;
+    }
+
+    @GET
+    @Path("/xml")
+    @Produces(MediaType.APPLICATION_XML)
+    public List<ActeurEntity> getXml() {
+        ActeurDAO acteurDAO = new ActeurDAO();
+        return acteurDAO.getActeurEntityList();
+    }
+
+    @GET
+    @Path("/json")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<ActeurEntity> getJson() {
+        ActeurDAO acteurDAO = new ActeurDAO();
+        return acteurDAO.getActeurEntityList();
     }
 
 }
