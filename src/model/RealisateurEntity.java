@@ -1,7 +1,7 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by nathan on 10/10/2016.
@@ -12,7 +12,7 @@ public class RealisateurEntity {
     private int noRea;
     private String nomRea;
     private String prenRea;
-    private Collection<FilmEntity> filmsByNoRea;
+    private List<FilmEntity> filmsByNoRea;
 
     @Id
     @Column(name = "NoRea", nullable = false)
@@ -67,11 +67,11 @@ public class RealisateurEntity {
     }
 
     @OneToMany(mappedBy = "realisateurByNoRea")
-    public Collection<FilmEntity> getFilmsByNoRea() {
+    public List<FilmEntity> getFilmsByNoRea() {
         return filmsByNoRea;
     }
 
-    public void setFilmsByNoRea(Collection<FilmEntity> filmsByNoRea) {
+    public void setFilmsByNoRea(List<FilmEntity> filmsByNoRea) {
         this.filmsByNoRea = filmsByNoRea;
     }
 }

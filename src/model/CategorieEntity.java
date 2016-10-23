@@ -1,7 +1,7 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by nathan on 10/10/2016.
@@ -11,7 +11,7 @@ import java.util.Collection;
 public class CategorieEntity {
     private String codeCat;
     private String libelleCat;
-    private Collection<FilmEntity> filmsByCodeCat;
+    private List<FilmEntity> filmsByCodeCat;
 
     @Id
     @Column(name = "CodeCat", nullable = false, length = 2)
@@ -54,11 +54,11 @@ public class CategorieEntity {
     }
 
     @OneToMany(mappedBy = "categorieByCodeCat")
-    public Collection<FilmEntity> getFilmsByCodeCat() {
+    public List<FilmEntity> getFilmsByCodeCat() {
         return filmsByCodeCat;
     }
 
-    public void setFilmsByCodeCat(Collection<FilmEntity> filmsByCodeCat) {
+    public void setFilmsByCodeCat(List<FilmEntity> filmsByCodeCat) {
         this.filmsByCodeCat = filmsByCodeCat;
     }
 }

@@ -35,7 +35,7 @@ public class TestEndpoint {
     @Produces(MediaType.TEXT_PLAIN)
     public String getActeurs() {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        String res = "";
+        String res = "Liste des acteurs";
         Transaction tx = session.beginTransaction();
         List<ActeurEntity> listActeurEntity = (List<ActeurEntity>) session.createQuery("from ActeurEntity").list();
         for (ActeurEntity acteurEntity : listActeurEntity) {

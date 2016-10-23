@@ -2,7 +2,7 @@ package model;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by nathan on 10/10/2016.
@@ -16,11 +16,9 @@ public class FilmEntity {
     private Date dateSortie;
     private int budget;
     private int montantRecette;
-    private int noRea;
-    private String codeCat;
     private RealisateurEntity realisateurByNoRea;
     private CategorieEntity categorieByCodeCat;
-    private Collection<PersonnageEntity> personnagesByNoFilm;
+    private List<PersonnageEntity> personnagesByNoFilm;
 
     @Id
     @Column(name = "NoFilm", nullable = false)
@@ -82,26 +80,6 @@ public class FilmEntity {
         this.montantRecette = montantRecette;
     }
 
-    @Basic
-    @Column(name = "NoRea", nullable = false)
-    public int getNoRea() {
-        return noRea;
-    }
-
-    public void setNoRea(int noRea) {
-        this.noRea = noRea;
-    }
-
-    @Basic
-    @Column(name = "CodeCat", nullable = false, length = 2)
-    public String getCodeCat() {
-        return codeCat;
-    }
-
-    public void setCodeCat(String codeCat) {
-        this.codeCat = codeCat;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -113,10 +91,8 @@ public class FilmEntity {
         if (duree != that.duree) return false;
         if (budget != that.budget) return false;
         if (montantRecette != that.montantRecette) return false;
-        if (noRea != that.noRea) return false;
         if (titre != null ? !titre.equals(that.titre) : that.titre != null) return false;
         if (dateSortie != null ? !dateSortie.equals(that.dateSortie) : that.dateSortie != null) return false;
-        if (codeCat != null ? !codeCat.equals(that.codeCat) : that.codeCat != null) return false;
 
         return true;
     }
@@ -129,8 +105,6 @@ public class FilmEntity {
         result = 31 * result + (dateSortie != null ? dateSortie.hashCode() : 0);
         result = 31 * result + budget;
         result = 31 * result + montantRecette;
-        result = 31 * result + noRea;
-        result = 31 * result + (codeCat != null ? codeCat.hashCode() : 0);
         return result;
     }
 
@@ -155,11 +129,11 @@ public class FilmEntity {
     }
 
     @OneToMany(mappedBy = "filmByNoFilm")
-    public Collection<PersonnageEntity> getPersonnagesByNoFilm() {
+    public List<PersonnageEntity> getPersonnagesByNoFilm() {
         return personnagesByNoFilm;
     }
 
-    public void setPersonnagesByNoFilm(Collection<PersonnageEntity> personnagesByNoFilm) {
+    public void setPersonnagesByNoFilm(List<PersonnageEntity> personnagesByNoFilm) {
         this.personnagesByNoFilm = personnagesByNoFilm;
     }
 }

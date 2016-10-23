@@ -68,7 +68,7 @@ public class PersonnageEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "NoFilm", referencedColumnName = "NoFilm", nullable = false)
+    @JoinColumn(name = "NoFilm", referencedColumnName = "NoFilm", nullable = false, insertable = false, updatable = false)
     public FilmEntity getFilmByNoFilm() {
         return filmByNoFilm;
     }
@@ -78,7 +78,7 @@ public class PersonnageEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "NoAct", referencedColumnName = "NoAct", nullable = false)
+    @JoinColumn(name = "NoAct", referencedColumnName = "NoAct", nullable = false, insertable = false, updatable = false)
     public ActeurEntity getActeurByNoAct() {
         return acteurByNoAct;
     }

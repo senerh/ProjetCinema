@@ -2,7 +2,7 @@ package model;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by nathan on 10/10/2016.
@@ -15,7 +15,7 @@ public class ActeurEntity {
     private String prenAct;
     private Date dateNaiss;
     private Date dateDeces;
-    private Collection<PersonnageEntity> personnagesByNoAct;
+    private List<PersonnageEntity> personnagesByNoAct;
 
     @Id
     @Column(name = "NoAct", nullable = false)
@@ -94,11 +94,11 @@ public class ActeurEntity {
     }
 
     @OneToMany(mappedBy = "acteurByNoAct")
-    public Collection<PersonnageEntity> getPersonnagesByNoAct() {
+    public List<PersonnageEntity> getPersonnagesByNoAct() {
         return personnagesByNoAct;
     }
 
-    public void setPersonnagesByNoAct(Collection<PersonnageEntity> personnagesByNoAct) {
+    public void setPersonnagesByNoAct(List<PersonnageEntity> personnagesByNoAct) {
         this.personnagesByNoAct = personnagesByNoAct;
     }
 }

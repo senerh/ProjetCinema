@@ -12,11 +12,11 @@
         <property name="connection.username">userepul</property>
         <property name="connection.password">epul</property>
 
-        <mapping resource="model/ActeurEntity.hbm.xml"/>
-        <mapping resource="model/CategorieEntity.hbm.xml"/>
-        <mapping resource="model/PersonnageEntity.hbm.xml"/>
-        <mapping resource="model/FilmEntity.hbm.xml"/>
-        <mapping resource="model/RealisateurEntity.hbm.xml"/>
+        <mapping class="model.ActeurEntity"/>
+        <mapping class="model.CategorieEntity"/>
+        <mapping class="model.PersonnageEntity"/>
+        <mapping class="model.FilmEntity"/>
+        <mapping class="model.RealisateurEntity"/>
 
     </session-factory>
 </hibernate-configuration>
