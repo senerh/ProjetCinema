@@ -15,11 +15,11 @@ public class ActeurService {
     }
 
     public List<ActeurEntity> getActeurEntityList() {
-        return acteurDAO.getActeurEntityList();
+        return acteurDAO.getEntityList();
     }
 
     public ActeurEntity getActeurEntity(int noAct) {
-        return acteurDAO.getActeurEntity(noAct);
+        return acteurDAO.getEntityById(noAct);
     }
 
     public List<PersonnageEntity> getPersonnageEntityListByActeur(int noAct) {

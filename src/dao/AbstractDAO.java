@@ -1,30 +1,40 @@
 package dao;
 
-import model.ActeurEntity;
 import util.HibernateUtil;
 import org.hibernate.Session;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AbstractDAO {
+public class AbstractDAO<Entity> {
 
+    private final Class<Entity> entityClass;
     protected Session session;
 
-    public AbstractDAO() {
+    public AbstractDAO(Class<Entity> entityClass) {
+        this.entityClass = entityClass;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
     }
 
-    public List<?> getEntityList(Class entity) {
+    public List<Entity> getEntityList() {
         session.beginTransaction();
-        List<?> entityList = session.createQuery("from "+entity.getName()).list();
+        List<Entity> entityList = session.createQuery("from " + entityClass.getName()).list();
         session.getTransaction().commit();
 
         return entityList;
     }
 
-    public Object getEntityById(Class entity, int id) {
+    public Entity getEntityById(int id) {
+        return getEntityById((Serializable) id);
+    }
+
+    public Entity getEntityById(String id) {
+        return getEntityById((Serializable) id);
+    }
+
+    private Entity getEntityById(Serializable id) {
         session.beginTransaction();
-        Object entityById = session.get(entity, id);
+        Entity entityById = session.get(entityClass, id);
         session.getTransaction().commit();
 
         return entityById;

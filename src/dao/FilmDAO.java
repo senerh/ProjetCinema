@@ -3,11 +3,12 @@ package dao;
 import model.FilmEntity;
 import java.util.List;
 
-public class FilmDAO extends AbstractDAO {
+public class FilmDAO extends AbstractDAO<FilmEntity> {
 
-    public List<FilmEntity> getFilmEntityList() {
-        return (List<FilmEntity>) getEntityList(FilmEntity.class);
+    public FilmDAO() {
+        super(FilmEntity.class);
     }
+
 }
 
 

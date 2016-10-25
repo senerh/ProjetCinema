@@ -14,7 +14,11 @@ public class FilmService {
     }
 
     public List<FilmEntity> getfilmEntityList() {
-        return filmDAO.getFilmEntityList();
+        return filmDAO.getEntityList();
+    }
+
+    public FilmEntity getFilmEntityById(int noFilm) {
+        return filmDAO.getEntityById(noFilm);
     }
 
 }

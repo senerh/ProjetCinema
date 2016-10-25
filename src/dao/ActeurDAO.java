@@ -5,14 +5,10 @@ import model.PersonnageEntity;
 
 import java.util.List;
 
-public class ActeurDAO extends AbstractDAO {
+public class ActeurDAO extends AbstractDAO<ActeurEntity> {
 
-    public List<ActeurEntity> getActeurEntityList() {
-        return (List<ActeurEntity>)getEntityList(ActeurEntity.class);
-    }
-
-    public ActeurEntity getActeurEntity(int noAct) {
-        return (ActeurEntity)getEntityById(ActeurEntity.class, noAct);
+    public ActeurDAO() {
+        super(ActeurEntity.class);
     }
 
     public List<PersonnageEntity> getPersonnageEntityListByActeur(int noAct) {
