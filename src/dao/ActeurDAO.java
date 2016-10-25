@@ -8,17 +8,11 @@ import java.util.List;
 public class ActeurDAO extends AbstractDAO {
 
     public List<ActeurEntity> getActeurEntityList() {
-        session.beginTransaction();
-        List<ActeurEntity> acteurEntityList = session.createQuery("from ActeurEntity").list();
-        session.getTransaction().commit();
-        return acteurEntityList;
+        return (List<ActeurEntity>)getEntityList(ActeurEntity.class);
     }
 
     public ActeurEntity getActeurEntity(int noAct) {
-        session.beginTransaction();
-        ActeurEntity acteurEntity = session.get(ActeurEntity.class, noAct);
-        session.getTransaction().commit();
-        return acteurEntity;
+        return (ActeurEntity)getEntityById(ActeurEntity.class, noAct);
     }
 
     public List<PersonnageEntity> getPersonnageEntityListByActeur(int noAct) {
