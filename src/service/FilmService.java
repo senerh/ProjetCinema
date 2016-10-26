@@ -1,7 +1,9 @@
 package service;
 
 import dao.FilmDAO;
+import model.CategorieEntity;
 import model.FilmEntity;
+import model.RealisateurEntity;
 
 import java.util.List;
 
@@ -19,6 +21,14 @@ public class FilmService {
 
     public FilmEntity getFilmEntityById(int noFilm) {
         return filmDAO.getEntityById(noFilm);
+    }
+
+    public RealisateurEntity getRealisateurEntityByFilm(int noFilm) {
+        return filmDAO.getRealisateurByFilm(noFilm);
+    }
+
+    public CategorieEntity getCategorieEntityByFilm(int noFilm) {
+        return filmDAO.getCategorieEntityByFilm(noFilm);
     }
 
 }
