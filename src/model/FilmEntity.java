@@ -11,9 +11,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
 import java.util.List;
 
-/**
- * Created by nathan on 10/10/2016.
- */
 @Entity
 @Table(name = "film", schema = "cinema", catalog = "")
 @XmlRootElement

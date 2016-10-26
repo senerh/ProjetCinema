@@ -3,6 +3,7 @@ package service;
 import dao.FilmDAO;
 import model.CategorieEntity;
 import model.FilmEntity;
+import model.PersonnageEntity;
 import model.RealisateurEntity;
 
 import java.util.List;
@@ -23,4 +24,7 @@ public class FilmService {
         return filmDAO.getEntityById(noFilm);
     }
 
+    public List<PersonnageEntity> getPersonnageEntityListByFilm(int noFilm) {
+        return filmDAO.getPersonnageEntityListByFilm(noFilm);
+    }
 }

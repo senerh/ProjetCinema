@@ -1,9 +1,8 @@
 package endpoint;
 
 
-import model.CategorieEntity;
 import model.FilmEntity;
-import model.RealisateurEntity;
+import model.PersonnageEntity;
 import service.FilmService;
 
 import javax.ws.rs.GET;
@@ -33,5 +32,12 @@ public class FilmEndpoint {
     @Produces(MediaType.APPLICATION_XML)
     public FilmEntity getFilmEntityById(@PathParam("no-film") int noFilm) {
         return filmService.getFilmEntityById(noFilm);
+    }
+
+    @GET
+    @Path("/{no-film}/personnages")
+    @Produces(MediaType.APPLICATION_XML)
+    public List<PersonnageEntity> getPersonnageEntityListByFim(@PathParam("no-film") int noFilm) {
+        return filmService.getPersonnageEntityListByFilm(noFilm);
     }
 }
