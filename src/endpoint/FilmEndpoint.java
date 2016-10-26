@@ -34,18 +34,4 @@ public class FilmEndpoint {
     public FilmEntity getFilmEntityById(@PathParam("no-film") int noFilm) {
         return filmService.getFilmEntityById(noFilm);
     }
-
-    @GET
-    @Path("/{no-film}/realisateur")
-    @Produces(MediaType.APPLICATION_XML)
-    public RealisateurEntity getRealisateurEntityByFilm (@PathParam("no-film") int noFilm) {
-        return filmService.getRealisateurEntityByFilm(noFilm);
-    }
-
-    @GET
-    @Path("/{no-film}/categorie")
-    @Produces(MediaType.APPLICATION_XML)
-    public CategorieEntity getCategorieEntityByFilm (@PathParam("no-film") int noFilm) {
-        return filmService.getCategorieEntityByFilm(noFilm);
-    }
 }

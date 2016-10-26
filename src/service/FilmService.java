@@ -23,12 +23,4 @@ public class FilmService {
         return filmDAO.getEntityById(noFilm);
     }
 
-    public RealisateurEntity getRealisateurEntityByFilm(int noFilm) {
-        return filmDAO.getRealisateurByFilm(noFilm);
-    }
-
-    public CategorieEntity getCategorieEntityByFilm(int noFilm) {
-        return filmDAO.getCategorieEntityByFilm(noFilm);
-    }
-
 }

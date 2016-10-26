@@ -15,9 +15,7 @@ public class PersonnageEntity {
     private int noFilm;
     private int noAct;
     private String nomPers;
-    @XmlTransient
     private FilmEntity filmByNoFilm;
-    @XmlTransient
     private ActeurEntity acteurByNoAct;
 
     @Id

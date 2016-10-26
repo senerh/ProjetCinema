@@ -26,9 +26,7 @@ public class FilmEntity {
     private Date dateSortie;
     private int budget;
     private int montantRecette;
-    @XmlTransient
     private RealisateurEntity realisateurByNoRea;
-    @XmlTransient
     private CategorieEntity categorieByCodeCat;
     @XmlTransient
     private List<PersonnageEntity> personnagesByNoFilm;
