@@ -1,5 +1,7 @@
 package dao;
 
+import model.ActeurEntity;
+import org.hibernate.HibernateException;
 import util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -38,6 +40,19 @@ public class AbstractDAO<Entity> {
         session.getTransaction().commit();
 
         return entityById;
+    }
+
+    public void putEntity(Entity entity) {
+        session.beginTransaction();
+        try {
+            session.update(entity);
+            session.getTransaction().commit();
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException("Error while trying to update instance of <~" + entityClass.getName() + "~>.", e);
+        } finally {
+            session.close();
+        }
     }
 
 }

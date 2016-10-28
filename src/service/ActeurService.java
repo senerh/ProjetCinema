@@ -26,4 +26,7 @@ public class ActeurService {
         return acteurDAO.getPersonnageEntityListByActeur(noAct);
     }
 
+    public void putActeur(ActeurEntity acteurEntity) {
+        acteurDAO.putEntity(acteurEntity);
+    }
 }

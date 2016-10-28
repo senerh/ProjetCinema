@@ -4,10 +4,7 @@ import model.ActeurEntity;
 import model.PersonnageEntity;
 import service.ActeurService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -39,5 +36,12 @@ public class ActeurEndpoint {
     public List<PersonnageEntity> getPersonnageEntityList(@PathParam("no-act") int noAct) {
         List<PersonnageEntity> personnageEntityList = acteurService.getPersonnageEntityListByActeur(noAct);
         return personnageEntityList;
+    }
+
+    @PUT
+    @Path("/{no-act}")
+    @Consumes(MediaType.APPLICATION_XML)
+    public void putActeurEntity(ActeurEntity acteurEntity) {
+        acteurService.putActeur(acteurEntity);
     }
 }
