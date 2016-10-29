@@ -30,7 +30,7 @@ public class PersonnageService {
     }
 
     public void postPersonnage(PersonnageEntity personnageEntity) {
-        personnageDAO.persistEntity(personnageEntity);
+        personnageDAO.saveEntity(personnageEntity);
     }
 
     public void deletePersonnage(int noFilm, int noAct) {

@@ -59,19 +59,6 @@ public class AbstractDAO<Entity> {
         return entity;
     }
 
-    public void persistEntity(Entity entity) {
-        session.beginTransaction();
-        try {
-            session.persist(entity);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            session.getTransaction().rollback();
-            throw new RuntimeException("Error while trying to persist instance of <~" + entityClass.getName() + "~>.", e);
-        } finally {
-            session.close();
-        }
-    }
-
     public void deleteEntity(Serializable id) {
         session.beginTransaction();
         try {

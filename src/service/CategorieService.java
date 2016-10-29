@@ -26,7 +26,7 @@ public class CategorieService {
     }
 
     public void postCategorie(CategorieEntity categorieEntity) {
-        categorieDAO.persistEntity(categorieEntity);
+        categorieDAO.saveEntity(categorieEntity);
     }
 
     public void deleteCategorie(String codeCat) {
