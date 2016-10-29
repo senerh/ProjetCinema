@@ -27,6 +27,7 @@ public class ActeurEntity {
     private List<PersonnageEntity> personnagesByNoAct;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "NoAct", nullable = false)
     public int getNoAct() {
         return noAct;

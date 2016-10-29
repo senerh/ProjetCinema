@@ -1,9 +1,7 @@
 package dao;
 
-import model.ActeurEntity;
-import org.hibernate.HibernateException;
-import util.HibernateUtil;
 import org.hibernate.Session;
+import util.HibernateUtil;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,15 +24,7 @@ public class AbstractDAO<Entity> {
         return entityList;
     }
 
-    public Entity getEntityById(int id) {
-        return getEntityById((Serializable) id);
-    }
-
-    public Entity getEntityById(String id) {
-        return getEntityById((Serializable) id);
-    }
-
-    private Entity getEntityById(Serializable id) {
+    public Entity getEntityById(Serializable id) {
         session.beginTransaction();
         Entity entityById = session.get(entityClass, id);
         session.getTransaction().commit();
@@ -42,12 +32,12 @@ public class AbstractDAO<Entity> {
         return entityById;
     }
 
-    public void putEntity(Entity entity) {
+    public void updateEntity(Entity entity) {
         session.beginTransaction();
         try {
             session.update(entity);
             session.getTransaction().commit();
-        } catch (HibernateException e) {
+        } catch (Exception e) {
             session.getTransaction().rollback();
             throw new RuntimeException("Error while trying to update instance of <~" + entityClass.getName() + "~>.", e);
         } finally {
@@ -55,4 +45,44 @@ public class AbstractDAO<Entity> {
         }
     }
 
+    public Entity saveEntity(Entity entity) {
+        session.beginTransaction();
+        try {
+            session.save(entity);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException("Error while trying to save instance of <~" + entityClass.getName() + "~>.", e);
+        } finally {
+            session.close();
+        }
+        return entity;
+    }
+
+    public void persistEntity(Entity entity) {
+        session.beginTransaction();
+        try {
+            session.persist(entity);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException("Error while trying to persist instance of <~" + entityClass.getName() + "~>.", e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void deleteEntity(Serializable id) {
+        session.beginTransaction();
+        try {
+            Entity entity = session.get(entityClass, id);
+            session.delete(entity);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException("Error while trying to delete instance of <~" + entityClass.getName() + "~>.", e);
+        } finally {
+            session.close();
+        }
+    }
 }

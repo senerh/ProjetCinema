@@ -29,6 +29,7 @@ public class FilmEntity {
     private List<PersonnageEntity> personnagesByNoFilm;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "NoFilm", nullable = false)
     public int getNoFilm() {
         return noFilm;

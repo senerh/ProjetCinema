@@ -21,21 +21,21 @@ public class RealisateurEndpoint {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<RealisateurEntity> getRealisateurEntityList() {
         return realisateurService.getRealisateurEntityList();
     }
 
     @GET
     @Path("/{no-rea}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public RealisateurEntity getRealisateurEntity(@PathParam("no-rea") int noRea) {
         return realisateurService.getRealisateurEntityById(noRea);
     }
 
     @GET
     @Path("/{no-rea}/films")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<FilmEntity> getFilmEntityList(@PathParam("no-rea") int noRea) {
         return realisateurService.getFilmEntityListByRealisteur(noRea);
     }

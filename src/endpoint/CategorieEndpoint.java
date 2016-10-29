@@ -20,14 +20,14 @@ public class CategorieEndpoint {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<CategorieEntity> getCategorieEntityList() {
         return categorieService.getCategorieEntityList();
     }
 
     @GET
     @Path("/{code-cat}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public CategorieEntity getCategorieEntity(@PathParam("code-cat") String codeCat) {
         return categorieService.getCategorieById(codeCat);
     }

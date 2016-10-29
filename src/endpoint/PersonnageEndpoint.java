@@ -20,14 +20,14 @@ public class PersonnageEndpoint {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<PersonnageEntity> getPersonnageEntityList() {
         return personnageService.getPersonnageEntityList();
     }
 
     @GET
     @Path("/{no-film}/{no-act}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public PersonnageEntity getPersonnageEntity(
             @PathParam("no-film") int noFilm,
             @PathParam("no-act") int noAct) {

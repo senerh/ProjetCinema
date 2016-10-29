@@ -19,6 +19,7 @@ public class RealisateurEntity {
     private List<FilmEntity> filmsByNoRea;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "NoRea", nullable = false)
     public int getNoRea() {
         return noRea;

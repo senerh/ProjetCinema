@@ -27,6 +27,14 @@ public class ActeurService {
     }
 
     public void putActeur(ActeurEntity acteurEntity) {
-        acteurDAO.putEntity(acteurEntity);
+        acteurDAO.updateEntity(acteurEntity);
+    }
+
+    public ActeurEntity postActeur(ActeurEntity acteurEntity) {
+        return acteurDAO.saveEntity(acteurEntity);
+    }
+
+    public void deleteActeur(int noAct) {
+        acteurDAO.deleteEntity(noAct);
     }
 }

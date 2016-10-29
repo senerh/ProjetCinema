@@ -22,21 +22,21 @@ public class FilmEndpoint {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<FilmEntity> getFilmEntityList() {
         return filmService.getfilmEntityList();
     }
 
     @GET
     @Path("/{no-film}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public FilmEntity getFilmEntityById(@PathParam("no-film") int noFilm) {
         return filmService.getFilmEntityById(noFilm);
     }
 
     @GET
     @Path("/{no-film}/personnages")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<PersonnageEntity> getPersonnageEntityListByFim(@PathParam("no-film") int noFilm) {
         return filmService.getPersonnageEntityListByFilm(noFilm);
     }
