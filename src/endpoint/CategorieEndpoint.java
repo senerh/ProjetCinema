@@ -41,4 +41,10 @@ public class CategorieEndpoint {
         categorieService.postCategorie(categorieEntity);
     }
 
+    @DELETE
+    @Path("/{code-cat}")
+    public void deleteCategorieEntity(@PathParam("code-cat") String codeCat) {
+        categorieService.deleteCategorie(codeCat);
+    }
+
 }

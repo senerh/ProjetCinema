@@ -28,4 +28,8 @@ public class CategorieService {
     public void postCategorie(CategorieEntity categorieEntity) {
         categorieDAO.persistEntity(categorieEntity);
     }
+
+    public void deleteCategorie(String codeCat) {
+        categorieDAO.deleteEntity(codeCat);
+    }
 }
