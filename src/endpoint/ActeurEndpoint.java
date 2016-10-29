@@ -39,7 +39,6 @@ public class ActeurEndpoint {
     }
 
     @PUT
-    @Path("/{no-act}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void putActeurEntity(ActeurEntity acteurEntity) {
         acteurService.putActeur(acteurEntity);

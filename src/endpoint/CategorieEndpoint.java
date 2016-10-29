@@ -3,10 +3,7 @@ package endpoint;
 import model.CategorieEntity;
 import service.CategorieService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -30,6 +27,18 @@ public class CategorieEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public CategorieEntity getCategorieEntity(@PathParam("code-cat") String codeCat) {
         return categorieService.getCategorieById(codeCat);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void putCategorieEntity(CategorieEntity categorieEntity) {
+        categorieService.putCategorie(categorieEntity);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void postCategorieEntity(CategorieEntity categorieEntity) {
+        categorieService.postCategorie(categorieEntity);
     }
 
 }

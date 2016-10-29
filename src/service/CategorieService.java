@@ -20,4 +20,12 @@ public class CategorieService {
     public CategorieEntity getCategorieById(String codeCat) {
         return categorieDAO.getEntityById(codeCat);
     }
+
+    public void putCategorie(CategorieEntity categorieEntity) {
+        categorieDAO.updateEntity(categorieEntity);
+    }
+
+    public void postCategorie(CategorieEntity categorieEntity) {
+        categorieDAO.persistEntity(categorieEntity);
+    }
 }
