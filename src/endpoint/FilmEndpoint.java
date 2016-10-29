@@ -5,10 +5,7 @@ import model.FilmEntity;
 import model.PersonnageEntity;
 import service.FilmService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -39,5 +36,24 @@ public class FilmEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public List<PersonnageEntity> getPersonnageEntityListByFim(@PathParam("no-film") int noFilm) {
         return filmService.getPersonnageEntityListByFilm(noFilm);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void putFilmEnity(FilmEntity filmEntity) {
+        filmService.putFilm(filmEntity);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public FilmEntity postFilmEntity(FilmEntity filmEntity) {
+        return filmService.postFilm(filmEntity);
+    }
+
+    @DELETE
+    @Path("/{no-film}")
+    public void deleteFilmEntity(@PathParam("no-film") int noFilm) {
+        filmService.deleteFilm(noFilm);
     }
 }

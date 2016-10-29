@@ -27,4 +27,17 @@ public class FilmService {
     public List<PersonnageEntity> getPersonnageEntityListByFilm(int noFilm) {
         return filmDAO.getPersonnageEntityListByFilm(noFilm);
     }
+
+    public void putFilm(FilmEntity filmEntity) {
+        filmDAO.updateEntity(filmEntity);
+    }
+
+    public FilmEntity postFilm(FilmEntity filmEntity) {
+        return filmDAO.saveEntity(filmEntity);
+    }
+
+
+    public void deleteFilm(int noFilm) {
+        filmDAO.deleteEntity(noFilm);
+    }
 }
