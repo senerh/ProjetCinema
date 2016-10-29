@@ -2,6 +2,7 @@ package service;
 
 import dao.PersonnageDAO;
 import model.PersonnageEntity;
+import model.PersonnageEntityPK;
 
 import java.util.List;
 
@@ -18,6 +19,24 @@ public class PersonnageService {
     }
 
     public PersonnageEntity getPersonnageEntityById(int noFilm, int noAct) {
-        return personnageDAO.getPersonnageEntityById(noFilm, noAct);
+        PersonnageEntityPK pk = new PersonnageEntityPK();
+        pk.setNoFilm(noFilm);
+        pk.setNoAct(noAct);
+        return personnageDAO.getEntityById(pk);
+    }
+
+    public void putPersonnage(PersonnageEntity personnageEntity) {
+        personnageDAO.updateEntity(personnageEntity);
+    }
+
+    public void postPersonnage(PersonnageEntity personnageEntity) {
+        personnageDAO.persistEntity(personnageEntity);
+    }
+
+    public void deletePersonnage(int noFilm, int noAct) {
+        PersonnageEntityPK pk = new PersonnageEntityPK();
+        pk.setNoFilm(noFilm);
+        pk.setNoAct(noAct);
+        personnageDAO.deleteEntity(pk);
     }
 }

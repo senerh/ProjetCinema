@@ -11,14 +11,4 @@ public class PersonnageDAO extends AbstractDAO<PersonnageEntity> {
         super(PersonnageEntity.class);
     }
 
-    public PersonnageEntity getPersonnageEntityById(int noFilm, int noAct) {
-        session.beginTransaction();
-        Query query = session.createQuery("from PersonnageEntity where noFilm = :noFilm and noAct = :noAct");
-        query.setParameter("noFilm", noFilm);
-        query.setParameter("noAct", noAct);
-        PersonnageEntity personnageEntity = (PersonnageEntity) query.uniqueResult();
-        session.getTransaction().commit();
-
-        return personnageEntity;
-    }
 }
