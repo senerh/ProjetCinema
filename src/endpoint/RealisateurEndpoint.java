@@ -4,10 +4,7 @@ import model.FilmEntity;
 import model.RealisateurEntity;
 import service.RealisateurService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -38,5 +35,24 @@ public class RealisateurEndpoint {
     @Produces(MediaType.APPLICATION_JSON)
     public List<FilmEntity> getFilmEntityList(@PathParam("no-rea") int noRea) {
         return realisateurService.getFilmEntityListByRealisteur(noRea);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void putRealisateurEntity(RealisateurEntity realisateurEntity) {
+        realisateurService.putRealisateur(realisateurEntity);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public RealisateurEntity postRealisateurEntity(RealisateurEntity realisateurEntity) {
+        return realisateurService.postRealisateur(realisateurEntity);
+    }
+
+    @DELETE
+    @Path("/{no-rea}")
+    public void deleteRealisateurEntity(@PathParam("no-rea") int noRea) {
+        realisateurService.deleteRealisateur(noRea);
     }
 }

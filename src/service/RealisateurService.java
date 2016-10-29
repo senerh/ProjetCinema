@@ -25,4 +25,16 @@ public class RealisateurService {
     public List<FilmEntity> getFilmEntityListByRealisteur(int noRea) {
         return realisateurDAO.getFilmEntityListByRealisateur(noRea);
     }
+
+    public void putRealisateur(RealisateurEntity realisateurEntity) {
+        realisateurDAO.updateEntity(realisateurEntity);
+    }
+
+    public RealisateurEntity postRealisateur(RealisateurEntity realisateurEntity) {
+        return realisateurDAO.saveEntity(realisateurEntity);
+    }
+
+    public void deleteRealisateur(int noRea) {
+        realisateurDAO.deleteEntity(noRea);
+    }
 }
