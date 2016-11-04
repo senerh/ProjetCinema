@@ -1,7 +1,6 @@
 package dao;
 
 import model.FilmEntity;
-import model.PersonnageEntity;
 import model.RealisateurEntity;
 
 import java.util.List;
