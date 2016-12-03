@@ -5,6 +5,10 @@
          version="3.1">
 
     <servlet>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>endpoint;org.codehaus.jackson.jaxrs</param-value>
+        </init-param>
         <servlet-name>Jersey Web Application</servlet-name>
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <load-on-startup>1</load-on-startup>

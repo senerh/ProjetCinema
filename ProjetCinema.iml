@@ -57,13 +57,13 @@
     <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: javax.xml.stream:stax-api:1.0-2" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-catalina:7.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-servlet-api:7.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:7.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-annotations-api:7.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-api:7.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-util:7.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-json:1.13" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jettison:jettison:1.1" level="project" />
+    <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.3-1" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-xc:1.9.2" level="project" />
   </component>
 </module>
