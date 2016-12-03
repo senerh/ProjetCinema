@@ -65,7 +65,5 @@
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.2" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.9.2" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-xc:1.9.2" level="project" />
-    <orderEntry type="library" name="Maven: com.thetransactioncompany:cors-filter:2.5" level="project" />
-    <orderEntry type="library" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" level="project" />
   </component>
 </module>
