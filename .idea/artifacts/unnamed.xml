@@ -19,7 +19,6 @@
           <element id="library" level="project" name="Maven: javax.enterprise:cdi-api:1.1" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
-          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.2.4" />
           <element id="library" level="project" name="Maven: javax.xml.stream:stax-api:1.0-2" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" />
@@ -40,6 +39,7 @@
           <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
           <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.5" />
           <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" />
+          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.2.2" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ProjetCinema/web/Web" />
