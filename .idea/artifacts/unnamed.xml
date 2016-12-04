@@ -38,6 +38,8 @@
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-xc:1.9.2" />
           <element id="library" level="project" name="Maven: org.codehaus.jettison:jettison:1.1" />
           <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.5" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ProjetCinema/web/Web" />
