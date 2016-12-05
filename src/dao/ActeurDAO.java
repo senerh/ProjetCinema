@@ -2,6 +2,7 @@ package dao;
 
 import model.ActeurEntity;
 import model.PersonnageEntity;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -20,5 +21,22 @@ public class ActeurDAO extends AbstractDAO<ActeurEntity> {
         personnageEntityList.size();
         session.getTransaction().commit();
         return personnageEntityList;
+    }
+
+    public void deleteActeurEntity(int noAct) {
+        session.beginTransaction();
+        try {
+            ActeurEntity acteurEntity = session.get(ActeurEntity.class, noAct);
+            Query query = session.createQuery("delete PersonnageEntity where noAct = :noAct");
+            query.setParameter("noAct", noAct);
+            query.executeUpdate();
+            session.delete(acteurEntity);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            throw new RuntimeException("Error while trying to delete an Acteur with its Personnages.", e);
+        } finally {
+            session.close();
+        }
     }
 }

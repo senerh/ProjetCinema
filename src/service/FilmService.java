@@ -1,10 +1,8 @@
 package service;
 
 import dao.FilmDAO;
-import model.CategorieEntity;
 import model.FilmEntity;
 import model.PersonnageEntity;
-import model.RealisateurEntity;
 
 import java.util.List;
 
@@ -36,8 +34,7 @@ public class FilmService {
         return filmDAO.saveEntity(filmEntity);
     }
 
-
     public void deleteFilm(int noFilm) {
-        filmDAO.deleteEntity(noFilm);
+        filmDAO.deleteFilmEntity(noFilm);
     }
 }
