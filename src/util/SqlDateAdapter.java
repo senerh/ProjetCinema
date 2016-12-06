@@ -23,7 +23,7 @@ public class SqlDateAdapter extends XmlAdapter<String, Date> {
 
     @Override
     public Date unmarshal(String stringDate) throws Exception {
-        if(null == stringDate) {
+        if(null == stringDate || stringDate.equals("")) {
             return null;
         }
         try {
